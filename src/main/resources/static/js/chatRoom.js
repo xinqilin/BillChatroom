@@ -91,6 +91,7 @@ function onMessageReceived(payload) {
 		var usernameText = document.createTextNode(message.sender);
 		usernameElement.appendChild(usernameText);
 		messageElement.appendChild(usernameElement);
+		
 	}
 	var textElement = document.createElement('p');
 	var messageText = document.createTextNode(message.content);
@@ -99,4 +100,9 @@ function onMessageReceived(payload) {
 	document.querySelector('#messageList').appendChild(messageElement);
 	document.querySelector('#messageList').scrollTop = document
 			.querySelector('#messageList').scrollHeight;
+//	var userName = document.createElement('i');
+//	userName.setAttribute("value",message.sender);
+//	document.querySelector('#userName').removeChild();
+//	document.querySelector('#userName').appendChild(userName);
+	
 }

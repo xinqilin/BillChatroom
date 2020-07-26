@@ -21,7 +21,6 @@ public class WebsocketEventListener {
     @EventListener
     public void handleWebSocketConnectListener(SessionConnectedEvent event) {
         System.out.println("app push 新訊息");
-//        System.out.println(event);
     }
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
