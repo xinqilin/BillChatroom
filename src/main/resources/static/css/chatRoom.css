@@ -76,7 +76,7 @@ button.accent {
 	text-align: center;
 }
 .welcome-page-container {
-	background-color: grey;
+	background-color: pink;
 	width: 100%;
 	max-width: 500px;
 	display: inline-block;
@@ -97,7 +97,7 @@ button.accent {
 	height: 100%;
 }
 .dialogue-container {
-	background-color: green;
+	background-color: pink;
 	margin: 10px 0;
 	max-width: 700px;
 	margin-left: auto;
@@ -153,18 +153,19 @@ button.accent {
 	vertical-align: middle;
 	font-size: 18px;
 	line-height: 42px;
-	color: #fff;
+	color: deeppink;
 	text-align: center;
 	border-radius: 50%;
 	font-style: normal;
 	text-transform: uppercase;
 }
 #dialogue-page .message-data span {
-	color: #333;
+	color: green;
+	font-size:50;
 	font-weight: 600;
 }
 #dialogue-page .message-data p {
-	color: #43464b;
+	color: #0080FF;
 }
 #dialogueForm .input-group input {
 	border: 0;
@@ -182,7 +183,7 @@ button.accent {
 .dialogue-header {
 	text-align: center;
 	padding: 15px;
-	border-bottom: 1px solid #ececec;
+	border-bottom: 1px solid pink;
 }
 .dialogue-header h2 {
 	margin: 0;

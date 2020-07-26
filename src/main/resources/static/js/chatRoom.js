@@ -15,8 +15,8 @@ function connect(event) {
 	event.preventDefault();
 }
 function connectionSuccess() {
-	stompClient.subscribe('/topic/javainuse', onMessageReceived);
-	stompClient.send("/app/chat.newUser", {}, JSON.stringify({
+	stompClient.subscribe('/topic/Bill', onMessageReceived);
+	stompClient.send("/app/chatroom.newUser", {}, JSON.stringify({
 		sender : name,
 		type : 'newUser'
 	}))
@@ -29,7 +29,7 @@ function sendMessage(event) {
 			content : document.querySelector('#chatMessage').value,
 			type : 'CHAT'
 		};
-		stompClient.send("/app/chat.sendMessage", {}, JSON
+		stompClient.send("/app/chatroom.sendMessage", {}, JSON
 				.stringify(chatMessage));
 		document.querySelector('#chatMessage').value = '';
 	}
@@ -40,10 +40,10 @@ function onMessageReceived(payload) {
 	var messageElement = document.createElement('li');
 	if (message.type === 'newUser') {
 		messageElement.classList.add('event-data');
-		message.content = message.sender + 'has joined the chat';
+		message.content = message.sender + ' 參加了Bill聊天室';
 	} else if (message.type === 'Leave') {
 		messageElement.classList.add('event-data');
-		message.content = message.sender + 'has left the chat';
+		message.content = message.sender + ' 滾出了Bill聊天室';
 	} else {
 		messageElement.classList.add('message-data');
 		var element = document.createElement('i');

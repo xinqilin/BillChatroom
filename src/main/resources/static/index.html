@@ -3,8 +3,8 @@
 <head>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<meta charset="BIG5">
-<title>ChatRoom</title>
+<meta charset="UTF-8">
+<title>Bill 聊天室</title>
 <link rel="stylesheet" href="/css/chatRoom.css" />
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
@@ -15,14 +15,14 @@
 <body>
 	<div id="welcome-page">
 		<div class="welcome-page-container">
-			<h1 class="title">��J�W��:</h1>
+			<h1 class="title">輸入名稱:</h1>
 			<form id="welcomeForm" name="welcomeForm">
 				<div class="form-group">
-					<input type="text" id="name" placeholder="name"
+					<input type="text" id="name" placeholder="聊天室名稱"
 						class="form-control" />
 				</div>
 				<div class="form-group">
-					<button type="submit" onclass="accent username-submit">GO</button>
+					<button type="submit" onclass="accent username-submit">進入聊天室</button>
 				</div>
 			</form>
 		</div>
@@ -30,7 +30,7 @@
 	<div id="dialogue-page" class="hidden">
 		<div class="dialogue-container">
 			<div class="dialogue-header">
-				<h2>ChatRoom</h2>
+				<h2>Bill 聊天室</h2>
 			</div>
 			<ul id="messageList">
 			</ul>
@@ -38,9 +38,9 @@
 				<div class="form-group">
 					<div class="input-group clearfix">
 						<input type="text" id="chatMessage"
-							placeholder="Enter a message...." autocomplete="off"
+							placeholder="輸入訊息" autocomplete="off"
 							class="form-control" />
-						<button type="submit" class="glyphicon glyphicon-share-alt">�o�e</button>
+						<button type="submit" class="glyphicon glyphicon-share-alt">發送</button>
 					</div>
 				</div>
 			</form>

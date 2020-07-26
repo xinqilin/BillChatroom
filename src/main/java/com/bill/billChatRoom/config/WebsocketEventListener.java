@@ -16,9 +16,12 @@ public class WebsocketEventListener {
 	
 	@Autowired
     private SimpMessageSendingOperations messagingTemplate;
+	
+	
     @EventListener
     public void handleWebSocketConnectListener(SessionConnectedEvent event) {
-        System.out.println("新連線");
+        System.out.println("app push 新訊息");
+//        System.out.println(event);
     }
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
