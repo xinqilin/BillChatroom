@@ -3,8 +3,9 @@
 <head>
 <meta name="viewport"
 	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<title>JavaInUse Chat Application | JavaInUse</title>
-<link rel="stylesheet" href="/css/style.css" />
+<meta charset="BIG5">
+<title>ChatRoom</title>
+<link rel="stylesheet" href="/css/chatRoom.css" />
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -14,16 +15,14 @@
 <body>
 	<div id="welcome-page">
 		<div class="welcome-page-container">
-			<h1 class="title">Welcome - To join the chat group enter your
-				name</h1>
+			<h1 class="title">輸入名稱:</h1>
 			<form id="welcomeForm" name="welcomeForm">
 				<div class="form-group">
 					<input type="text" id="name" placeholder="name"
 						class="form-control" />
 				</div>
 				<div class="form-group">
-					<button type="submit" onclass="accent username-submit">Lets
-						Begin</button>
+					<button type="submit" onclass="accent username-submit">GO</button>
 				</div>
 			</form>
 		</div>
@@ -31,7 +30,7 @@
 	<div id="dialogue-page" class="hidden">
 		<div class="dialogue-container">
 			<div class="dialogue-header">
-				<h2>JavaInUse Chat Application</h2>
+				<h2>ChatRoom</h2>
 			</div>
 			<ul id="messageList">
 			</ul>
@@ -41,7 +40,7 @@
 						<input type="text" id="chatMessage"
 							placeholder="Enter a message...." autocomplete="off"
 							class="form-control" />
-						<button type="submit" class="glyphicon glyphicon-share-alt">Send</button>
+						<button type="submit" class="glyphicon glyphicon-share-alt">發送</button>
 					</div>
 				</div>
 			</form>
@@ -51,6 +50,6 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-	<script src="/js/script.js"></script>
+	<script src="/js/chatRoom.js"></script>
 </body>
 </html>

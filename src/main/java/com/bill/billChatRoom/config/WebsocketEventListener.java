@@ -18,7 +18,7 @@ public class WebsocketEventListener {
     private SimpMessageSendingOperations messagingTemplate;
     @EventListener
     public void handleWebSocketConnectListener(SessionConnectedEvent event) {
-        System.out.println("Received a new web socket connection");
+        System.out.println("新連線");
     }
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
