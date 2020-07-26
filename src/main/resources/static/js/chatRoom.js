@@ -1,4 +1,4 @@
-'use strict';
+
 document.querySelector('#welcomeForm').addEventListener('submit', connect, true)
 document.querySelector('#dialogueForm').addEventListener('submit', sendMessage, true)
 var stompClient = null;
@@ -50,6 +50,21 @@ function onMessageReceived(payload) {
 		var text = document.createTextNode(message.sender[0]);
 		element.appendChild(text);
 		messageElement.appendChild(element);
+		
+//		messageElement.classList.add('message-data');
+//		var div=document.createElement('div');
+////		var element = document.createElement('img');
+//		var text = document.createTextNode(message.sender[0]);
+//		console.log(text);
+//		if(text==="B")
+//			messageElement.append("<img src='/pic/bill.jpg'></img>");
+//		else if(text==="P")
+//			messageElement.append("<img src='/pic/paul.jpg'></img>");
+//		else if(text==="L")
+//			messageElement.append("<img src='/pic/lagain.jpg'></img>");
+//		else
+//			messageElement.append("<i>"+text+"</i>");
+		
 		var usernameElement = document.createElement('span');
 		var usernameText = document.createTextNode(message.sender);
 		usernameElement.appendChild(usernameText);
