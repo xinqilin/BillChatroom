@@ -1,6 +1,7 @@
 
 document.querySelector('#welcomeForm').addEventListener('submit', connect, true)
 document.querySelector('#dialogueForm').addEventListener('submit', sendMessage, true)
+document.querySelector('#kickout').addEventListener('submit', connectFail, true)
 var stompClient = null;
 var name = null;
 function connect(event) {
@@ -12,6 +13,19 @@ function connect(event) {
 		var socket = new SockJS('/websocketApp');
 		stompClient = Stomp.over(socket);
 		stompClient.connect({}, connectionSuccess);
+	}
+	event.preventDefault();
+}
+
+function connectFail(event) {
+	name = '善平';
+
+	if (name) {
+//		document.querySelector('#welcome-page').classList.add('hidden');
+//		document.querySelector('#dialogue-page').classList.remove('hidden');
+		var socket = new SockJS('/websocketApp');
+		stompClient = Stomp.over(socket);
+		stompClient.connect({}, connectionFail);
 	}
 	event.preventDefault();
 }
@@ -35,6 +49,14 @@ function connectionSuccess() {
 	stompClient.send("/app/chatroom.newUser", {}, JSON.stringify({
 		sender : name,
 		type : 'newUser'
+	}))
+}
+
+function connectionFail() {
+	stompClient.subscribe('/topic/Bill', onMessageReceived);
+	stompClient.send("/app/chatroom.Leave", {}, JSON.stringify({
+		sender : name,
+		type : 'Leave'
 	}))
 }
 function sendMessage(event) {
@@ -72,8 +94,13 @@ function onMessageReceived(payload) {
 		var img = document.createElement('img');
 		var text = document.createTextNode(message.sender[0]);
 		console.log(message.sender);
+		
+		var usernameElement = document.createElement('span');
+		var usernameText = document.createTextNode(message.sender);
+		
 		if(message.sender=='Bill'){
 			img.setAttribute("src","/pic/bill.jpg");
+			messageElement.setAttribute("margin-left","100px");
 			messageElement.appendChild(img);
 		}else if(message.sender=='Paul'){
 			img.setAttribute("src","/pic/paul.jpg");
@@ -81,14 +108,19 @@ function onMessageReceived(payload) {
 		}else if(message.sender=='Lagagain'){
 			img.setAttribute("src","/pic/lagain.jpg");
 			messageElement.appendChild(img);
+		}else if(message.sender=='善平'){
+			img.setAttribute("src","/pic/david.jpg");
+			messageElement.appendChild(img);
+		}else if(message.sender=='Grant'){
+			img.setAttribute("src","/pic/grant.jpg");
+			messageElement.appendChild(img);
 		}else{
 			i.appendChild(text);
 			messageElement.appendChild(i);
 		}
 
 		
-		var usernameElement = document.createElement('span');
-		var usernameText = document.createTextNode(message.sender);
+
 		usernameElement.appendChild(usernameText);
 		messageElement.appendChild(usernameElement);
 		
